@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TNT.CmdLineParser</name>
+    </assembly>
+    <members>
+        <member name="T:TNT.CmdLineParser.EnumValue">
+            <summary>
+            Represents the name and description of a enumerated value
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.EnumValue.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Name of enumerated value</param>
+            <param name="description">Description of enumerated value</param>
+        </member>
+        <member name="P:TNT.CmdLineParser.EnumValue.Name">
+            <summary>
+            Name of enumerated value
+            </summary>
+        </member>
+        <member name="P:TNT.CmdLineParser.EnumValue.Description">
+            <summary>
+            Description of enumerated value
+            </summary>
+        </member>
+        <member name="T:TNT.CmdLineParser.IntValueParameter">
+            <summary>
+            Parameter that requires an integer value
+            </summary>
+        </member>
+        <member name="T:TNT.CmdLineParser.ValueParameter">
+            <summary>
+            Parameter that expects a value
+            </summary>
+        </member>
+        <member name="T:TNT.CmdLineParser.Parameter">
+            <summary>
+            Abstract base class for parameter types
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.Parameter.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.Parameter.AsArgument">
+            <summary>
+            Returns a string representing how the argument should be used as an argument
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TNT.CmdLineParser.Parameter.Usage(System.String)">
+            <summary>
+            Returns the usage
+            </summary>
+            <param name="delimiter">Delimiter</param>
+            <returns>Text describing how to use the parameter</returns>
+        </member>
+        <member name="P:TNT.CmdLineParser.Parameter.Name">
+            <summary>
+            Parameter name
+            </summary>
+        </member>
+        <member name="P:TNT.CmdLineParser.Parameter.ShortName">
+            <summary>
+            Short name of the parameter name
+            </summary>
+        </member>
+        <member name="P:TNT.CmdLineParser.Parameter.Description">
+            <summary>
+            Parameter description
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.ValueParameter.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.ValueParameter.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="required">Indicates whether or not the parameter is required. Default is true.</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.ValueParameter.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="defaultValue">Indicates the default value to use if one is provided</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.ValueParameter.Usage(System.String)">
+            <summary>
+            Returns the usage
+            </summary>
+            <param name="delimiter">Delimiter</param>
+            <returns>Text describing how to use the parameter</returns>
+        </member>
+        <member name="M:TNT.CmdLineParser.ValueParameter.Validate(System.String)">
+            <summary>
+            Method to validate the parameters value
+            </summary>
+            <param name="value">Value to validate</param>
+        </member>
+        <member name="P:TNT.CmdLineParser.ValueParameter.DefaultValue">
+            <summary>
+            Default value to use if value isn't specified
+            </summary>
+        </member>
+        <member name="P:TNT.CmdLineParser.ValueParameter.IsRequired">
+            <summary>
+            Indicates if the parameter is required
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.IntValueParameter.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.IntValueParameter.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="required">indicates the parameter is required</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.IntValueParameter.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="defaultValue">Specifies the default value to use if the optional value isn't provided</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.IntValueParameter.Validate(System.String)">
+            <summary>
+            Validates that the value associated with this parameter is a valid integer
+            </summary>
+            <param name="value">Value to validate</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="T:TNT.CmdLineParser.FlagParameter">
+            <summary>
+            Parameter that can be provided without an associated value
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.FlagParameter.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+        </member>
+        <member name="T:TNT.CmdLineParser.PathParameter">
+            <summary>
+            Parameter that represents a path
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.PathParameter.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.PathParameter.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="required">Indicates whether or not the parameter is required. Default is true.</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.PathParameter.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="defaultValue">Indicates the default value to use if one is provided</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.PathParameter.Validate(System.String)">
+            <summary>
+            Validates that the value associated with this parameter is a valid path
+            </summary>
+            <param name="value">Value to validate</param>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:TNT.CmdLineParser.EnumValueParameter">
+            <summary>
+            Represents a parameters that only accepts certain values.
+            </summary>
+        </member>
+        <member name="F:TNT.CmdLineParser.EnumValueParameter.m_ValidEnumValues">
+            <summary>
+            List of valid values
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.EnumValueParameter.#ctor(System.String,System.String,System.Collections.Generic.List{TNT.CmdLineParser.EnumValue})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="validEnumValues">List of valid EnumValues</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.EnumValueParameter.#ctor(System.String,System.String,System.Collections.Generic.List{TNT.CmdLineParser.EnumValue},System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="validEnumValues">List of valid EnumValues</param>
+            <param name="required">Indicates whether or not the parameter is required. Default is true.</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.EnumValueParameter.#ctor(System.String,System.String,System.Collections.Generic.List{TNT.CmdLineParser.EnumValue},System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="validEnumValues">List of valid EnumValues</param>
+            <param name="defaultValue">Indicates the default value to use if one is provided</param>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:TNT.CmdLineParser.EnumValueParameter.Validate(System.String)">
+            <summary>
+            Validates that the value associated with this parameter is a valid integer
+            </summary>
+            <param name="value">Value to validate</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:TNT.CmdLineParser.EnumValueParameter.Usage(System.String)">
+            <summary>
+            Returns the usage
+            </summary>
+            <param name="delimiter">Delimiter</param>
+            <returns>Text describing how to use the parameter</returns>
+        </member>
+        <member name="T:TNT.CmdLineParser.FileParameter">
+            <summary>
+            Parameter that represents a file
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.FileParameter.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.FileParameter.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="required">Indicates whether or not the parameter is required. Default is true.</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.FileParameter.#ctor(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="required">Indicates whether or not the parameter is required. Default is true.</param>
+            <param name="validateFile">Specifies whether or not to validate that the file currently exists.
+            Default is true.</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.FileParameter.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="defaultValue">Indicates the default value to use if one is provided</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.FileParameter.Validate(System.String)">
+            <summary>
+            Validates that the value associated with this parameter is a valid path and if 
+            ValidateFile is true, validates the file exists.
+            </summary>
+            <param name="value">Value to validate</param>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="P:TNT.CmdLineParser.FileParameter.ValidateFile">
+            <summary>
+            Indicates whether or not validation should check for the existance of a file.
+            </summary>
+        </member>
+        <member name="T:TNT.CmdLineParser.DateTimeParameter">
+            <summary>
+            Represents a parameter that contains a date/time value
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.DateTimeParameter.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.DateTimeParameter.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="required">Indicates whether or not the parameter is required. Default is true.</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.DateTimeParameter.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="description">Parameter description</param>
+            <param name="defaultValue">Indicates the default value to use if one is provided</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.DateTimeParameter.Validate(System.String)">
+            <summary>
+            Validates the that the value is a valid DateTime
+            </summary>
+            <param name="value">Value to validate</param>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="T:TNT.CmdLineParser.CmdLineParams">
+            <summary>
+            Parses and validate command line arguments given a parameter validators.
+            </summary>
+        </member>
+        <member name="F:TNT.CmdLineParser.CmdLineParams.m_ValueParams">
+            <summary>
+            List of key/value pair representing value parameters
+            </summary>
+        </member>
+        <member name="F:TNT.CmdLineParser.CmdLineParams.m_FlagParams">
+            <summary>
+            List of strings representing flag parameters
+            </summary>
+        </member>
+        <member name="F:TNT.CmdLineParser.CmdLineParams.m_ParameterValidators">
+            <summary>
+            List representing the parameters validators
+            </summary>
+        </member>
+        <member name="F:TNT.CmdLineParser.CmdLineParams.m_ParamDelimiter">
+            <summary>
+            Indicates the parameter delimiter
+            </summary>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cmdLineParams">String representing the command line arguments</param>
+            <param name="paramDelimiter">Indicates the parameter delimiter. '/' is default.</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cmdLineParams">String representing the command line arguments</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.#ctor(System.String[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cmdLineParams">Array of strings that represent the command line arguments</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.#ctor(System.String[],System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cmdLineParams">Array of strings that represent the command line arguments</param>
+            <param name="paramDelimiter">Indicates the parameter delimiter. '/' is default.</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.Parse(System.String)">
+            <summary>
+            Parses the arguments and places them in either m_FlagParams or m_ValueParams.
+            </summary>
+            <param name="cmdLineArgs">List of values that can be parsed</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.HasValueParameter(System.String)">
+            <summary>
+            Checks if there is a value parameter specified by the key value
+            </summary>
+            <param name="key">Key of the value parameter</param>
+            <returns>True if value parameter with key exists, false otherwise.</returns>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.HasFlagParameter(System.String)">
+            <summary>
+            Checks if there is a flag parameter specified by the key value
+            </summary>
+            <param name="key">Key of the flag paramter</param>
+            <returns>True if flag parameter with key exists, false otherwise.</returns>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.ValidateParameters">
+            <summary>
+            Validates the parameters.
+            </summary>
+            <returns>True if all parameters are valid</returns>
+            <exception cref="T:System.ArgumentException">ArgumentException</exception>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.AddValidationParameter(TNT.CmdLineParser.Parameter)">
+            <summary>
+            Adds a parameter that will be used to validate parameters
+            </summary>
+            <param name="parameter">Parameter to add</param>
+        </member>
+        <member name="M:TNT.CmdLineParser.CmdLineParams.GetUsage">
+            <summary>
+            Gets the usage text. Usage text is generated by obtaining the assembly's properties and displaying the 
+            validation parameters descriptions.
+            </summary>
+            <returns>Usage</returns>
+        </member>
+        <member name="P:TNT.CmdLineParser.CmdLineParams.Item(System.String)">
+            <summary>
+            Gets the value associated with the key
+            </summary>
+            <param name="key">Key associated with the value</param>
+            <returns>The value associated with the key if key exists</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="P:TNT.CmdLineParser.CmdLineParams.ParameterDelimiter">
+            <summary>
+            Gets the parameter delimiter
+            </summary>
+        </member>
+    </members>
+</doc>

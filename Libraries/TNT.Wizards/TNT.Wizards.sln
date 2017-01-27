@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNT.Wizards", "trunk\TNT.Wizards.csproj", "{1F0EBFAB-EC0A-40E9-B5FC-7F6A724D7AE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{16E2C9A3-3FFA-456F-8B92-C51C5593B07B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F0EBFAB-EC0A-40E9-B5FC-7F6A724D7AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F0EBFAB-EC0A-40E9-B5FC-7F6A724D7AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F0EBFAB-EC0A-40E9-B5FC-7F6A724D7AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F0EBFAB-EC0A-40E9-B5FC-7F6A724D7AE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E2C9A3-3FFA-456F-8B92-C51C5593B07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E2C9A3-3FFA-456F-8B92-C51C5593B07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E2C9A3-3FFA-456F-8B92-C51C5593B07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E2C9A3-3FFA-456F-8B92-C51C5593B07B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

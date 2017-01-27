@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8B4D9D5-25B9-47B9-B79B-EB4DCBC075C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TNT.Configuration</RootNamespace>
+    <AssemblyName>TNT.Configuration</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\TNT.Configuration.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyInfo_Title>TNT Configuration</AssemblyInfo_Title>
+    <AssemblyInfo_MinorVersion>2</AssemblyInfo_MinorVersion>
+    <Build_Offset>1233</Build_Offset>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseConfigurationElementCollection.cs" />
+    <Compile Include="BaseConfigurationSection.cs" />
+    <Compile Include="CADSettingsSection\CADSettingsConfigurationSection.cs" />
+    <Compile Include="ConfigurationElement.cs" />
+    <Compile Include="Exceptions\ConfigurationMissingSectionException.cs" />
+    <Compile Include="InstallationFilesConfigurationSection\FileElement.cs" />
+    <Compile Include="InstallationFilesConfigurationSection\InstallationFilesCollection.cs" />
+    <Compile Include="InstallationFilesConfigurationSection\InstallationFilesConfigurationSection.cs" />
+    <Compile Include="PaletteNodeConfigurationSection\PaletteNodeConfigurationSection.cs" />
+    <Compile Include="PartsConfigurationSection\PartElement.cs" />
+    <Compile Include="PartsConfigurationSection\PartsCollection.cs" />
+    <Compile Include="PartsConfigurationSection\PartsConfigurationSection.cs" />
+    <Compile Include="Reference.cs" />
+    <Compile Include="References.cs" />
+    <Compile Include="XmlSection.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\AssemblyInfo.targets" />
+</Project>

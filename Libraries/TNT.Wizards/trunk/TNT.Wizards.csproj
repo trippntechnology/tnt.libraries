@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F0EBFAB-EC0A-40E9-B5FC-7F6A724D7AE5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TNT.Wizards</RootNamespace>
+    <AssemblyName>TNT.Wizards</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\TNT.Wizards.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyInfo_Title>TNT Wizards</AssemblyInfo_Title>
+    <Build_Offset>2543</Build_Offset>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Wizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Wizard.Designer.cs">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\WizardPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Base\WizardPanel.Designer.cs">
+      <DependentUpon>WizardPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiPageWizardTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiPageWizardTest.Designer.cs">
+      <DependentUpon>MultiPageWizardTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SinglePageWizardTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SinglePageWizardTest.Designer.cs">
+      <DependentUpon>SinglePageWizardTest.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\Wizard.resx">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\WizardPanel.resx">
+      <DependentUpon>WizardPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiPageWizardTest.resx">
+      <DependentUpon>MultiPageWizardTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SinglePageWizardTest.resx">
+      <DependentUpon>SinglePageWizardTest.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\AssemblyInfo.targets" />
+</Project>
