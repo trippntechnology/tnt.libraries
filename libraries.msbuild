@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="build" ToolsVersion="4.0">
+	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+	<PropertyGroup>
+	</PropertyGroup>
+	<Target Name="clean">
+		<MSBuild Projects="TNT.CmdLineParser\trunk\TNT.CmdLineParser.csproj" Targets="Clean"/>
+		<MSBuild Projects="TNT.Collections\trunk\TNT.Collections.csproj" Targets="Clean"/>
+		<MSBuild Projects="TNT.Configuration\trunk\TNT.Configuration.csproj" Targets="Clean"/>
+		<MSBuild Projects="TNT.Data.Tools\trunk\TNT.Data.Tools.csproj" Targets="Clean"/>
+		<MSBuild Projects="TNT.Math\trunk\TNT.Math.csproj" Targets="Clean"/>
+		<MSBuild Projects="TNT.Plugin\trunk\TNT.Plugin.csproj" Targets="Clean"/>
+		<MSBuild Projects="TNT.SQLite\trunk\TNT.SQLite.csproj" Targets="Clean"/>
+		<MSBuild Projects="TNT.Utilities\trunk\TNT.Utilities.csproj" Targets="Clean"/>
+		<MSBuild Projects="TNT.WCF.Utilities\trunk\TNT.WCF.Utilities.csproj" Targets="Clean"/>
+	</Target>
+	<Target Name="build">
+		<MSBuild Projects="TNT.CmdLineParser\trunk\TNT.CmdLineParser.csproj" Targets="Rebuild"/>
+		<MSBuild Projects="TNT.Collections\trunk\TNT.Collections.csproj" Targets="Rebuild"/>
+		<MSBuild Projects="TNT.Configuration\trunk\TNT.Configuration.csproj" Targets="Rebuild"/>
+		<MSBuild Projects="TNT.Data.Tools\trunk\TNT.Data.Tools.csproj" Targets="Rebuild"/>
+		<MSBuild Projects="TNT.Math\trunk\TNT.Math.csproj" Targets="Rebuild"/>
+		<MSBuild Projects="TNT.Plugin\trunk\TNT.Plugin.csproj" Targets="Rebuild"/>
+		<MSBuild Projects="TNT.SQLite\trunk\TNT.SQLite.csproj" Targets="Rebuild"/>
+		<MSBuild Projects="TNT.Utilities\trunk\TNT.Utilities.csproj" Targets="Rebuild"/>
+		<MSBuild Projects="TNT.WCF.Utilities\trunk\TNT.WCF.Utilities.csproj" Targets="Rebuild"/>
+	</Target>
+</Project>

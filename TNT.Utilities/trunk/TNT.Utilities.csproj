@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{026B1998-3B54-4964-B172-DD4DDADC3D3D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TNT.Utilities</RootNamespace>
+    <AssemblyName>TNT.Utilities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\TNT.Utilities.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\TNT.Utilities.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug %28PALETTE_PROPERTIES%29|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug %28PALETTE_PROPERTIES%29\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\TNTUtilities.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <DocumentationFile>bin\Debug %28PALETTE_PROPERTIES%29\TNT.Utilities.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyInfo_Title>TNT Utilities</AssemblyInfo_Title>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationRegistry.cs" />
+    <Compile Include="CommandManagement\Command.cs" />
+    <Compile Include="CommandManagement\CommandExecutor.cs" />
+    <Compile Include="CommandManagement\CommandManager.cs" />
+    <Compile Include="CommandManagement\ToolStripButtonCommandExecutor.cs" />
+    <Compile Include="CommandManagement\ToolStripMenuItemCommandExecutor.cs" />
+    <Compile Include="CommandManagement\ToolStripSplitButtonCommandExecutor.cs" />
+    <Compile Include="Console\CERTParameter.cs" />
+    <Compile Include="Console\EmailListParameter.cs" />
+    <Compile Include="Console\FileListParameter.cs" />
+    <Compile Include="Console\IntParameter.cs" />
+    <Compile Include="Console\EMailParameter.cs" />
+    <Compile Include="Console\DoubleParameter.cs" />
+    <Compile Include="Console\PathParameter.cs" />
+    <Compile Include="Console\DateTimeParameter.cs" />
+    <Compile Include="Console\EnumParameter.cs" />
+    <Compile Include="Console\FileParameter.cs" />
+    <Compile Include="Console\FlagParameter.cs" />
+    <Compile Include="Console\Parameters.cs" />
+    <Compile Include="Console\StringListParameter.cs" />
+    <Compile Include="Console\StringParameter.cs" />
+    <Compile Include="Console\UriParameter.cs" />
+    <Compile Include="CustomAttributes\PropertyReflectorAttribute.cs" />
+    <Compile Include="Console\Parameter.cs" />
+    <Compile Include="Ftp.cs" />
+    <Compile Include="MutexWrapper.cs" />
+    <Compile Include="PropertyReflector.cs" />
+    <Compile Include="Reflector.cs" />
+    <Compile Include="Registration.cs" />
+    <Compile Include="RegistrationKey.cs" />
+    <Compile Include="Token.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\TNT.AssemblyInfo.1.0.0\build\TNT.AssemblyInfo.targets" Condition="Exists('..\packages\TNT.AssemblyInfo.1.0.0\build\TNT.AssemblyInfo.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\TNT.AssemblyInfo.1.0.0\build\TNT.AssemblyInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\TNT.AssemblyInfo.1.0.0\build\TNT.AssemblyInfo.targets'))" />
+  </Target>
+</Project>

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TNT.SQLite</name>
+    </assembly>
+    <members>
+        <member name="T:TNT.SQLite.SQLiteBase">
+            <summary>
+            Base class for all SQLite classes. Implements methods for accessing SQLite database
+            </summary>
+        </member>
+        <member name="F:TNT.SQLite.SQLiteBase.m_ConnectionString">
+            <summary>
+            Connection string
+            </summary>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.Execute(System.String)">
+            <summary>
+            Executes a non-query sql statement
+            </summary>
+            <param name="sql">Sql statement</param>
+            <returns>Number of rows effected</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.Execute(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})">
+            <summary>
+            Executes a non-query sql statement
+            </summary>
+            <param name="sql">Sql statement</param>
+            <param name="parms">Parameters</param>
+            <returns>Number of rows effected</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.Execute``1(System.String,System.Func{System.Data.Common.DbDataReader,``0})">
+            <summary>
+            Executes a query sql statement with results
+            </summary>
+            <typeparam name="T">Type of result</typeparam>
+            <param name="sql">Sql statement</param>
+            <param name="dataReaderProcessor">Processes the data reader</param>
+            <returns>Results of type T</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.ExecuteScalar``1(System.String)">
+            <summary>
+            Returns the first column of the first row cast to type T
+            </summary>
+            <typeparam name="T">Type of value expected</typeparam>
+            <param name="sql">Query</param>
+            <returns>The first column of the first row cast to type T</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.GetGuid(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the Guid associated with the column name
+            </summary>
+            <param name="dr">Data reader</param>
+            <param name="columnName">Column name</param>
+            <returns>Guid associated with the column name if exists, Guid.Empty otherwise</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.GetString(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the string associated with the column name
+            </summary>
+            <param name="dr">Data reader</param>
+            <param name="columnName">Column name</param>
+            <returns>String associated with the column name if exists, string.Empty otherwise</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.GetUri(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the Uri associated with the column name
+            </summary>
+            <param name="dr">Data reader</param>
+            <param name="columnName">Column name</param>
+            <returns>Uri associated with the column name if exists, null otherwise</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.GetVersion(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the Version associated with the column name
+            </summary>
+            <param name="dr">Data reader</param>
+            <param name="columnName">Column name</param>
+            <returns>Version associated with the column name if exists, null o	therwise</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.GetDateTime(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the DateTime associated with the column name
+            </summary>
+            <param name="dr">Data reader</param>
+            <param name="columnName">Column name</param>
+            <returns>DateTime associated with the column name if exists, DateTime.MinValue otherwise</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.GetInt(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the int value associated with the column name
+            </summary>
+            <param name="dr">Data reader</param>
+            <param name="columnName">Column name</param>
+            <returns>Int value associated with the column name</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.GetLong(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+            Gets the long value associated with the column name
+            </summary>
+            <param name="dr">Data reader</param>
+            <param name="columnName">Column name</param>
+            <returns>Long value associated with the column name</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.IsDBNull(System.Object)">
+            <summary>
+            Check if the obj is of type DBNull
+            </summary>
+            <param name="obj">Object</param>
+            <returns>True if obj is of type DBNull, false otherwise</returns>
+        </member>
+        <member name="M:TNT.SQLite.SQLiteBase.Format(System.DateTime)">
+            <summary>
+            Formats the DateTime value to be compatible with SQLite DateTime type
+            </summary>
+            <param name="dateTime">DateTime value</param>
+            <returns>DateTime formatted to be compatible with SQLite</returns>
+        </member>
+        <member name="P:TNT.SQLite.SQLiteBase.ConnectionString">
+            <summary>
+            Initializes the connection string if empty and returns it
+            </summary>
+        </member>
+        <member name="P:TNT.SQLite.SQLiteBase.Connection">
+            <summary>
+            Returns a SQLite Connection associated with the connection string
+            </summary>
+        </member>
+    </members>
+</doc>
