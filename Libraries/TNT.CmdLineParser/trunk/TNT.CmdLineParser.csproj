@@ -102,8 +102,4 @@
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\..\AssemblyInfo.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)TNT.CmdLineParser.* $(ProjectDir)..\binaries</PostBuildEvent>
-  </PropertyGroup>
 </Project>
