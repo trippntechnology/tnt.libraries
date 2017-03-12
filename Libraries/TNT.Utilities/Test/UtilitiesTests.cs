@@ -88,7 +88,7 @@ namespace Test
 
 			var types = Utilities.GetTypes(assemblyFile, null);
 
-			Assert.AreEqual(56, types.Length);
+			Assert.AreEqual(57, types.Length);
 
 			types = Utilities.GetTypes(assemblyFile, t =>
 			{

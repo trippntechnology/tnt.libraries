@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\trunk\TNT.Utilities.csproj">
-      <Project>{026b1998-3b54-4964-b172-dd4ddadc3d3d}</Project>
+      <Project>{600b6d9a-f0aa-4dbe-a5f1-61bc3bd39c9f}</Project>
       <Name>TNT.Utilities</Name>
     </ProjectReference>
   </ItemGroup>

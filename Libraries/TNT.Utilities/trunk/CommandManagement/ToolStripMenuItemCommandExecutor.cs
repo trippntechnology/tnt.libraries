@@ -24,6 +24,15 @@ namespace TNT.Utilities.CommandManagement
 			set { MenuItem.Checked = value; }
 		}
 
+		/// <summary>
+		/// Represents a ToolStripMenuItem.CheckOnClick property
+		/// </summary>
+		public override bool CheckOnClick
+		{
+			get { return MenuItem.CheckOnClick; }
+			set { MenuItem.CheckOnClick = value; }
+		}
+
 		#endregion
 
 		#region Constructors

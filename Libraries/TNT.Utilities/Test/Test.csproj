@@ -77,12 +77,6 @@
     <Compile Include="UtilitiesTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\trunk\TNT.Utilities.csproj">
-      <Project>{026b1998-3b54-4964-b172-dd4ddadc3d3d}</Project>
-      <Name>TNT.Utilities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resources\file1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -92,6 +86,12 @@
     <Content Include="Resources\file3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\trunk\TNT.Utilities.csproj">
+      <Project>{600b6d9a-f0aa-4dbe-a5f1-61bc3bd39c9f}</Project>
+      <Name>TNT.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
