@@ -81,6 +81,15 @@ namespace TNT.Utilities.CommandManagement
 		}
 
 		/// <summary>
+		/// Represents the ToolStripItem.CheckOnClick property
+		/// </summary>
+		public bool CheckOnClick
+		{
+			get { return m_Executors.First().CheckOnClick; }
+			set { m_Executors.ForEach(e => e.CheckOnClick = value); }
+		}
+
+		/// <summary>
 		/// Represents the ToolStripItem.Visible property
 		/// </summary>
 		public bool Visible 

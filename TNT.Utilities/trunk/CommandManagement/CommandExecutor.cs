@@ -10,7 +10,7 @@ namespace TNT.Utilities.CommandManagement
 	public abstract class CommandExecutor
 	{
 		#region Members
-		
+
 		/// <summary>
 		/// Command that owns the CommandExecutor
 		/// </summary>
@@ -37,7 +37,7 @@ namespace TNT.Utilities.CommandManagement
 		/// <summary>
 		/// References the ToolStripItem.Visible property
 		/// </summary>
-		virtual public bool Visible 
+		virtual public bool Visible
 		{
 			get { return ToolStripItem.Visible; }
 			set { ToolStripItem.Visible = value; }
@@ -73,7 +73,7 @@ namespace TNT.Utilities.CommandManagement
 		#endregion
 
 		#region Constructors
-		
+
 		/// <summary>
 		/// Initializes a CommandExecutor with a Command and associated ToolStripItem. Wires the Command
 		/// event to the ToolStripItem.
@@ -126,6 +126,11 @@ namespace TNT.Utilities.CommandManagement
 		/// Represents the checked property of the ToolStripItem's subclass
 		/// </summary>
 		public abstract bool Checked { get; set; }
+
+		/// <summary>
+		/// Represents the CheckOnClick property of the ToolStripItem's subclass
+		/// </summary>
+		public abstract bool CheckOnClick { get; set; }
 
 		/// <summary>
 		/// Associates the ExecuteCommand method with the ToolStripItem's Click

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace TNT.Utilities.CommandManagement
 {
@@ -40,6 +41,11 @@ namespace TNT.Utilities.CommandManagement
 		/// Not valid for this control
 		/// </summary>
 		public override bool Checked { get; set; }
+
+		/// <summary>
+		/// Not valid for this control
+		/// </summary>
+		public override bool CheckOnClick { get; set; }
 
 		/// <summary>
 		/// Not valid for this control
