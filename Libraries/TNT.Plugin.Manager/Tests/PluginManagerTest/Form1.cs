@@ -1,4 +1,4 @@
-﻿using Plugins;
+﻿using Data;
 using System;
 using System.Windows.Forms;
 using TNT.Plugin.Manager;
