@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using TNT.Plugin.Manager;
 
-namespace Plugins
+namespace Data
 {
 	public class ApplicationData : IApplicationData
 	{
-		public ApplicationData(string content)
+		public string Name { get; set; }
+
+		public ApplicationData(string name)
 		{
-			this.Content = content;
+			this.Name = name;
 		}
-		public string Content { get; set; }
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -83,7 +84,7 @@ namespace Plugins
 		public override void Execute(IWin32Window owner, IApplicationData content)
 		{
 			ApplicationData appData = content as ApplicationData;
-			MessageBox.Show($"Plugin1: {appData.Content}");
+			MessageBox.Show($"Plugin1: {appData.Name}");
 		}
 	}
 }
