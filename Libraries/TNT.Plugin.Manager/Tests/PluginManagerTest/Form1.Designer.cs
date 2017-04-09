@@ -33,12 +33,12 @@
 			this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.menuStrip2 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.toolStrip1.SuspendLayout();
 			this.toolStripContainer1.ContentPanel.SuspendLayout();
 			this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -99,6 +99,16 @@
 			this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
 			this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
 			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Location = new System.Drawing.Point(27, 24);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(68, 17);
+			this.checkBox1.TabIndex = 0;
+			this.checkBox1.Text = "Licenses";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
 			// menuStrip2
 			// 
 			this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
@@ -114,7 +124,7 @@
 			// 
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-			this.fileToolStripMenuItem.Text = "File";
+			this.fileToolStripMenuItem.Text = "&File";
 			// 
 			// menuStrip1
 			// 
@@ -131,7 +141,7 @@
 			// 
 			this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
 			this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
-			this.fileToolStripMenuItem1.Text = "File";
+			this.fileToolStripMenuItem1.Text = "&File";
 			// 
 			// toolStrip2
 			// 
@@ -140,16 +150,6 @@
 			this.toolStrip2.Name = "toolStrip2";
 			this.toolStrip2.Size = new System.Drawing.Size(111, 25);
 			this.toolStrip2.TabIndex = 3;
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(27, 24);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(68, 17);
-			this.checkBox1.TabIndex = 0;
-			this.checkBox1.Text = "Licenses";
-			this.checkBox1.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
