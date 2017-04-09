@@ -6,9 +6,9 @@ namespace Plugins
 {
 	public class Plugin2 : PluginBase
 	{
-		public override string MenuStripName { get { return "menustrip2"; } }
-		
-		public override string ToolStripName { get { return "toolstrip2"; } }
+		public override string MenuStripName => "menustrip2";
+
+		public override string ToolStripName => "toolstrip2";
 
 		public override MenuStrip GetMenuStrip()
 		{
@@ -59,7 +59,7 @@ namespace Plugins
 			ToolStripSplitButton button = (ToolStripSplitButton)CreateToolStripItem<ToolStripSplitButton>("Plugin2", GetImage("Plugins.Images.application_put.png"), "Tool tip for plugin2");
 			toolStrip.Items.Add(button);
 
-			button.DropDownItems.Add("One",null, OnOneClick);
+			button.DropDownItems.Add("One", null, OnOneClick);
 
 			//if (LeadingButtonSeparator)
 			//{

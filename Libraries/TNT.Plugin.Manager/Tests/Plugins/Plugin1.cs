@@ -13,9 +13,11 @@ namespace Plugins
 {
 	public class Plugin1 : PluginBase
 	{
-		public override string MenuStripName { get { return "menustrip1"; } }
+		public override string MenuStripName => "menustrip1";
 
-		public override string ToolStripName { get { return "toolstrip1"; } }
+		public override string ToolStripName => "toolstrip1";
+
+		public override bool LicenseRequired => true;
 
 		public override MenuStrip GetMenuStrip()
 		{
