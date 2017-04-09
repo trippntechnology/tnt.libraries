@@ -67,11 +67,35 @@ namespace TNT.Plugin.Manager
 		public abstract string ToolStripName { get; }
 
 		/// <summary>
+		/// Override when this plugin requires a license to execute
+		/// </summary>
+		public virtual bool LicenseRequired { get; } = false;
+
+		/// <summary>
 		/// Implement to associate an action with the <see cref="Plugin"/>
 		/// </summary>
 		/// <param name="owner">Calling application's window</param>
 		/// <param name="content">Content from the application that can be accessed</param>
 		public abstract void Execute(IWin32Window owner, IApplicationData content);
+
+		/// <summary>
+		/// Call to only execute if <paramref name="hasLicense"/> is true. If a license is not applicable, the caller only need
+		/// to call <see cref="Execute(IWin32Window, IApplicationData)"/>.
+		/// </summary>
+		/// <param name="owner">Calling application's window</param>
+		/// <param name="content">Content from the application that can be accessed</param>
+		/// <param name="hasLicense">Indicates if the calling application has a license</param>
+		public virtual void Execute(IWin32Window owner, IApplicationData content, bool hasLicense)
+		{
+			if (this.LicenseRequired && !hasLicense)
+			{
+				MessageBox.Show(owner, "You have discovered a feature only available in the the licensed versions of the appliation.", "Feature Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+			else
+			{
+				this.Execute(owner, content);
+			}
+		}
 
 		/// <summary>
 		/// Implement to generate a <see cref="MenuStrip"/> that can be merged with the calling application
