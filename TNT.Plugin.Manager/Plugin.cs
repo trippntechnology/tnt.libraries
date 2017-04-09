@@ -90,11 +90,50 @@ namespace TNT.Plugin.Manager
 		public virtual bool LicenseRequired { get; } = false;
 
 		/// <summary>
+		/// Text to display on the plugin's <see cref="ToolStripItem"/>s
+		/// </summary>
+		public abstract string Text { get; }
+
+		/// <summary>
+		/// Tool tip to display on the plugin's <see cref="ToolStripItem"/>s
+		/// </summary>
+		public abstract string ToolTipText { get; }
+
+		/// <summary>
+		/// Name of the embedded resource that should be used for the plugin's image
+		/// </summary>
+		public abstract string EmbeddedResource { get; }
+
+		/// <summary>
+		/// Override when this plugin requires a license to execute
+		/// </summary>
+		public virtual bool LicenseRequired { get; } = false;
+
+		/// <summary>
 		/// Implement to associate an action with the <see cref="Plugin"/>
 		/// </summary>
 		/// <param name="owner">Calling application's window</param>
 		/// <param name="content">Content from the application that can be accessed</param>
 		public abstract void Execute(IWin32Window owner, IApplicationData content);
+
+		/// <summary>
+		/// Call to only execute if <paramref name="hasLicense"/> is true. If a license is not applicable, the caller only need
+		/// to call <see cref="Execute(IWin32Window, IApplicationData)"/>.
+		/// </summary>
+		/// <param name="owner">Calling application's window</param>
+		/// <param name="content">Content from the application that can be accessed</param>
+		/// <param name="hasLicense">Indicates if the calling application has a license</param>
+		public virtual void Execute(IWin32Window owner, IApplicationData content, bool hasLicense)
+		{
+			if (this.LicenseRequired && !hasLicense)
+			{
+				MessageBox.Show(owner, "You have discovered a feature only available in the the licensed versions of the appliation.", "Feature Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+			else
+			{
+				this.Execute(owner, content);
+			}
+		}
 
 		/// <summary>
 		/// Call to only execute if <paramref name="hasLicense"/> is true. If a license is not applicable, the caller only need
