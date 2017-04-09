@@ -34,7 +34,7 @@ namespace Plugins
 			//	menu.DropDownItems.Add(new ToolStripSeparator());
 			//}
 
-			menu.DropDownItems.Add((ToolStripMenuItem)CreateToolStripItem<ToolStripMenuItem>("Plugin1", GetImage("Plugins.Images.application_put.png"), "Tool tip for plugin1"));
+			menu.DropDownItems.Add((ToolStripMenuItem)CreateToolStripItem<ToolStripMenuItem>());
 
 			//if (LeadingMenuSeparator)
 			//{
@@ -64,7 +64,7 @@ namespace Plugins
 			//	toolStrip.Items.Add(new ToolStripSeparator());
 			//}
 
-			toolStrip.Items.Add(CreateToolStripItem<ToolStripButton>("Plugin1", GetImage("Plugins.Images.application_put.png"), "Tool tip for plugin1"));
+			toolStrip.Items.Add(CreateToolStripItem<ToolStripButton>());
 
 			//if (LeadingButtonSeparator)
 			//{

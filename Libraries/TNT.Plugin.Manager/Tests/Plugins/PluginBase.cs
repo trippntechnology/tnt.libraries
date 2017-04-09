@@ -10,13 +10,13 @@ using TNT.Plugin.Manager;
 
 namespace Plugins
 {
-	public abstract class PluginBase : Plugin
+	public abstract class Plugin : TNT.Plugin.Manager.Plugin
 	{
-		protected Image GetImage(string name)
-		{
-			System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
-			Stream myStream = myAssembly.GetManifestResourceStream(name);
-			return new Bitmap(myStream);
-		}
+		//protected Image GetImage(string name)
+		//{
+		//	System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+		//	Stream myStream = myAssembly.GetManifestResourceStream(name);
+		//	return new Bitmap(myStream);
+		//}
 	}
 }

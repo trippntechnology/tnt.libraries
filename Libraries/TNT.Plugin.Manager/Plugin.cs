@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace TNT.Plugin.Manager
@@ -38,17 +39,14 @@ namespace TNT.Plugin.Manager
 		/// Creates a <see cref="ToolStripItem"/>
 		/// </summary>
 		/// <typeparam name="T">Type of <see cref="ToolStripItem"/> to create</typeparam>
-		/// <param name="text">Text to display</param>
-		/// <param name="image">Image to display</param>
-		/// <param name="toolTipText">ToolTipText to display</param>
 		/// <returns></returns>
-		protected ToolStripItem CreateToolStripItem<T>(string text, Image image, string toolTipText) where T : ToolStripItem, new()
+		protected ToolStripItem CreateToolStripItem<T>() where T : ToolStripItem, new()
 		{
 			ToolStripItem item = new T();
 
-			item.Text = text;
-			item.Image = image;
-			item.ToolTipText = toolTipText;
+			item.Text = this.Text;
+			item.Image = GetImage();
+			item.ToolTipText = this.ToolTipText;
 			item.Tag = this;
 
 			_ToolStripItems.Add(item);
@@ -65,6 +63,26 @@ namespace TNT.Plugin.Manager
 		/// Application's <see cref="ToolStrip"/> name where the plugin's <see cref="MenuStrip"/> should be merged
 		/// </summary>
 		public abstract string ToolStripName { get; }
+
+		/// <summary>
+		/// Override when this plugin requires a license to execute
+		/// </summary>
+		public virtual bool LicenseRequired { get; } = false;
+
+		/// <summary>
+		/// Text to display on the plugin's <see cref="ToolStripItem"/>s
+		/// </summary>
+		public abstract string Text { get; }
+
+		/// <summary>
+		/// Tool tip to display on the plugin's <see cref="ToolStripItem"/>s
+		/// </summary>
+		public abstract string ToolTipText { get; }
+
+		/// <summary>
+		/// Name of the embedded resource that should be used for the plugin's image
+		/// </summary>
+		public abstract string EmbeddedResource { get; }
 
 		/// <summary>
 		/// Override when this plugin requires a license to execute
@@ -98,6 +116,25 @@ namespace TNT.Plugin.Manager
 		}
 
 		/// <summary>
+		/// Call to only execute if <paramref name="hasLicense"/> is true. If a license is not applicable, the caller only need
+		/// to call <see cref="Execute(IWin32Window, IApplicationData)"/>.
+		/// </summary>
+		/// <param name="owner">Calling application's window</param>
+		/// <param name="content">Content from the application that can be accessed</param>
+		/// <param name="hasLicense">Indicates if the calling application has a license</param>
+		public virtual void Execute(IWin32Window owner, IApplicationData content, bool hasLicense)
+		{
+			if (this.LicenseRequired && !hasLicense)
+			{
+				MessageBox.Show(owner, "You have discovered a feature only available in the the licensed versions of the appliation.", "Feature Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+			else
+			{
+				this.Execute(owner, content);
+			}
+		}
+
+		/// <summary>
 		/// Implement to generate a <see cref="MenuStrip"/> that can be merged with the calling application
 		/// </summary>
 		/// <returns><see cref="MenuStrip"/></returns>
@@ -108,5 +145,16 @@ namespace TNT.Plugin.Manager
 		/// </summary>
 		/// <returns><see cref="ToolStrip"/></returns>
 		public abstract ToolStrip GetToolStrip();
+
+		/// <summary>
+		/// Returns and image referenced by the <see cref="EmbeddedResource"/>
+		/// </summary>
+		/// <returns><see cref="Image"/> represented by the <see cref="EmbeddedResource"/></returns>
+		protected Image GetImage()
+		{
+			System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetAssembly(this.GetType());
+			Stream myStream = myAssembly.GetManifestResourceStream(this.EmbeddedResource);
+			return new Bitmap(myStream);
+		}
 	}
 }
