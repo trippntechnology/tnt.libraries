@@ -25,7 +25,7 @@ namespace Plugins
 			//	menu.DropDownItems.Add(new ToolStripSeparator());
 			//}
 
-			menu.DropDownItems.Add((ToolStripMenuItem)CreateToolStripItem<ToolStripMenuItem>("Plugin2", GetImage("Plugins.Images.application_put.png"), "Tool tip for plugin2"));
+			menu.DropDownItems.Add((ToolStripMenuItem)CreateToolStripItem<ToolStripMenuItem>());
 
 			//if (LeadingMenuSeparator)
 			//{
@@ -56,7 +56,7 @@ namespace Plugins
 			//	toolStrip.Items.Add(new ToolStripSeparator());
 			//}
 
-			ToolStripSplitButton button = (ToolStripSplitButton)CreateToolStripItem<ToolStripSplitButton>("Plugin2", GetImage("Plugins.Images.application_put.png"), "Tool tip for plugin2");
+			ToolStripSplitButton button = (ToolStripSplitButton)CreateToolStripItem<ToolStripSplitButton>();
 			toolStrip.Items.Add(button);
 
 			button.DropDownItems.Add("One", null, OnOneClick);
