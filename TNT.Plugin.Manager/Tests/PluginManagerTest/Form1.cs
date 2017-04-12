@@ -12,7 +12,20 @@ namespace PluginManagerTest
 		{
 			InitializeComponent();
 
-			_Manager = new Manager(Controls, pluginOnClick, @"C:\Users\stripp\repos\csharp\Libraries\TNT.Plugin.Manager\Tests\Plugins\bin\Debug");
+			//_Manager = new Manager(Controls, pluginOnClick, onMouseEnter);
+			_Manager = new Manager(Controls, pluginOnClick, onToolTipChanged);
+			_Manager.Register(@"C:\Users\stripp\repos\csharp\Libraries\TNT.Plugin.Manager\Tests\Plugins\bin\Debug");
+		}
+
+		private void onToolTipChanged(string hint)
+		{
+			toolStripStatusLabel1.Text = hint;
+		}
+
+		private void onMouseEnter(object sender, EventArgs e)
+		{
+			ToolStripItem item = sender as ToolStripItem;
+			//toolStripStatusLabel1.Text = item.ToolTipText;
 		}
 
 		private void pluginOnClick(object arg1, EventArgs arg2)
