@@ -7,6 +7,12 @@ using static System.Windows.Forms.Control;
 namespace TNT.Plugin.Manager
 {
 	/// <summary>
+	/// Method signature for when a tool tip changes
+	/// </summary>
+	/// <param name="hint"></param>
+	public delegate void ToolTipChangedEventHandler(string hint);
+
+	/// <summary>
 	/// Class that manages <see cref="Plugin"/>
 	/// </summary>
 	public class Manager
@@ -22,38 +28,21 @@ namespace TNT.Plugin.Manager
 		private ControlCollection _Controls = null;
 
 		/// <summary>
+		/// Event that is fired when a hint is changed
+		/// </summary>
+		private ToolTipChangedEventHandler _OnToolTipChanged;
+
+		/// <summary>
 		/// Initialization constructor
 		/// </summary>
 		/// <param name="controls">Application's controls</param>
 		/// <param name="onClickHandler">Application's <see cref="EventHandler"/></param>
-		/// <param name="pluginDirectory">Directory where the plugins are located</param>
-		public Manager(ControlCollection controls, EventHandler onClickHandler, string pluginDirectory)
+		/// <param name="toolTipChangedEventHandler">Application's event handler for handling a tool tip change event</param>
+		public Manager(ControlCollection controls, EventHandler onClickHandler, ToolTipChangedEventHandler toolTipChangedEventHandler)
 		{
 			this._Controls = controls;
 			this._OnClick = onClickHandler;
-
-			if (!Directory.Exists(pluginDirectory))
-			{
-				throw new DirectoryNotFoundException($"Unable to locate {pluginDirectory}.");
-			}
-
-			var files = Directory.GetFiles(pluginDirectory, "*.dll");
-
-			foreach (string file in files)
-			{
-				var types = Utilities.Utilities.GetTypes(file, t =>
-				{
-					return HasBaseType(t, typeof(Plugin)) && !t.IsAbstract;
-				});
-
-				Plugin plugin = null;
-
-				foreach (Type type in types)
-				{
-					plugin = (Plugin)Activator.CreateInstance(type);
-					this.Register(plugin);
-				}
-			}
+			this._OnToolTipChanged = toolTipChangedEventHandler;
 		}
 
 		/// <summary>
@@ -81,22 +70,56 @@ namespace TNT.Plugin.Manager
 		/// <summary>
 		/// Registers a <see cref="Plugin"/>
 		/// </summary>
-		/// <param name="plugin"><see cref="Plugin"/> to register with the <see cref="Manager"/></param>
-		protected void Register(Plugin plugin)
+		/// <param name="pluginDirectory">Directory where plugins are located</param>
+		public void Register(string pluginDirectory)
 		{
-			ToolStrip appMenuStrip = (ToolStrip)_Controls.Find(plugin.MenuStripName, true).FirstOrDefault();//  (from c in _Controls where c.Name == plugin.MenuStripName select c).FirstOrDefault();
-			ToolStrip appToolStrip = (ToolStrip)_Controls.Find(plugin.ToolStripName, true).FirstOrDefault();// (from c in _Controls where c.Name == plugin.ToolStripName select c).FirstOrDefault();
+
+			if (!Directory.Exists(pluginDirectory))
+			{
+				throw new DirectoryNotFoundException($"Unable to locate {pluginDirectory}.");
+			}
+
+			var files = Directory.GetFiles(pluginDirectory, "*.dll");
+
+			foreach (string file in files)
+			{
+				var types = Utilities.Utilities.GetTypes(file, t =>
+				{
+					return HasBaseType(t, typeof(Plugin)) && !t.IsAbstract;
+				});
+
+				Plugin plugin = null;
+
+				foreach (Type type in types)
+				{
+					plugin = (Plugin)Activator.CreateInstance(type);
+					MergePlugin(plugin);
+				}
+			}
+
+		}
+
+		/// <summary>
+		/// Merges the plugin into the MenuStrip and ToolStrip
+		/// </summary>
+		/// <param name="plugin"><see cref="Plugin"/> to register with the <see cref="Manager"/></param>
+		private void MergePlugin(Plugin plugin)
+		{
+			ToolStrip appMenuStrip = (ToolStrip)_Controls.Find(plugin.MenuStripName, true).FirstOrDefault();
+			ToolStrip appToolStrip = (ToolStrip)_Controls.Find(plugin.ToolStripName, true).FirstOrDefault();
 
 			MenuStrip ms = plugin.GetMenuStrip();
 			ToolStrip ts = plugin.GetToolStrip();
+
 			plugin.SetOnClickEvent(_OnClick);
+			plugin.OnToolTipChanged = _OnToolTipChanged;
 
 			if (appMenuStrip != null && ms != null)
 			{
 				bool result = ToolStripManager.Merge(ms, appMenuStrip);
 			}
 
-			if (appToolStrip!= null && ts != null)
+			if (appToolStrip != null && ts != null)
 			{
 				bool result = ToolStripManager.Merge(ts, appToolStrip);
 			}

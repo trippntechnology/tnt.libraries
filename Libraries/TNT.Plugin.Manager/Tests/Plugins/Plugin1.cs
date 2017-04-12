@@ -11,18 +11,24 @@ using TNT.Plugin.Manager;
 
 namespace Plugins
 {
-	public class Plugin1 : PluginBase
+	public class Plugin1 : TNT.Plugin.Manager.Plugin
 	{
-		public override string MenuStripName => "menustrip1";
+		public override string MenuStripName => "menustrip2";
 
 		public override string ToolStripName => "toolstrip1";
 
 		public override bool LicenseRequired => true;
 
+		public override string Text => "Plugin1";
+
+		public override string ToolTipText => "Tool tip for Plugin1";
+
+		public override string EmbeddedResource => "Plugins.Images.application_put.png";
+
 		public override MenuStrip GetMenuStrip()
 		{
 			MenuStrip menuStrip = new MenuStrip();
-			ToolStripMenuItem menu = new ToolStripMenuItem("File");
+			ToolStripMenuItem menu = new ToolStripMenuItem("&File");
 
 			// Causes the Menu item in this menu strip to match the merging menu strip
 			menu.MergeAction = MergeAction.MatchOnly;

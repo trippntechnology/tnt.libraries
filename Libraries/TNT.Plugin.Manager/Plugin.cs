@@ -49,9 +49,39 @@ namespace TNT.Plugin.Manager
 			item.ToolTipText = this.ToolTipText;
 			item.Tag = this;
 
+			item.MouseEnter += Item_MouseEnter;
+			item.MouseLeave += Item_MouseLeave;
+
 			_ToolStripItems.Add(item);
 
 			return item;
+		}
+
+		/// <summary>
+		/// Calls <see cref="OnToolTipChanged"/> if defined with an empty string
+		/// </summary>
+		/// <param name="sender"><see cref="ToolStripItem"/></param>
+		/// <param name="e">Unused</param>
+		protected void Item_MouseLeave(object sender, EventArgs e)
+		{
+			if (this.OnToolTipChanged != null)
+			{
+				this.OnToolTipChanged(string.Empty);
+			}
+		}
+
+		/// <summary>
+		/// Calls <see cref="OnToolTipChanged"/> if defined with the <paramref name="sender"/> tool tip text
+		/// </summary>
+		/// <param name="sender"><see cref="ToolStripItem"/></param>
+		/// <param name="e">Unused</param>
+		protected void Item_MouseEnter(object sender, EventArgs e)
+		{
+			if (this.OnToolTipChanged != null)
+			{
+				ToolStripItem item = sender as ToolStripItem;
+				this.OnToolTipChanged(item.ToolTipText);
+			}
 		}
 
 		/// <summary>
@@ -90,6 +120,11 @@ namespace TNT.Plugin.Manager
 		/// <param name="owner">Calling application's window</param>
 		/// <param name="content">Content from the application that can be accessed</param>
 		public abstract void Execute(IWin32Window owner, IApplicationData content);
+
+		/// <summary>
+		/// Set to capture event for when the tool tip changes
+		/// </summary>
+		public ToolTipChangedEventHandler OnToolTipChanged { get; set; }
 
 		/// <summary>
 		/// Call to only execute if <paramref name="hasLicense"/> is true. If a license is not applicable, the caller only need
