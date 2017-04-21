@@ -89,7 +89,7 @@ namespace Plugins
 			return toolStrip;
 		}
 
-		public override void Execute(IWin32Window owner, IApplicationData content)
+		public override void Execute(IWin32Window owner, ToolStripItem sender, IApplicationData content)
 		{
 			ApplicationData appData = content as ApplicationData;
 			MessageBox.Show($"Plugin1: {appData.Name}");
