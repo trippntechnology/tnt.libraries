@@ -105,8 +105,18 @@ namespace TNT.Plugin.Manager
 		/// <param name="plugin"><see cref="Plugin"/> to register with the <see cref="Manager"/></param>
 		private void MergePlugin(Plugin plugin)
 		{
-			ToolStrip appMenuStrip = (ToolStrip)_Controls.Find(plugin.MenuStripName, true).FirstOrDefault();
-			ToolStrip appToolStrip = (ToolStrip)_Controls.Find(plugin.ToolStripName, true).FirstOrDefault();
+			ToolStrip appMenuStrip = null;
+			ToolStrip appToolStrip = null;
+
+			if (!string.IsNullOrEmpty(plugin.MenuStripName))
+			{
+				appMenuStrip = (ToolStrip)_Controls.Find(plugin.MenuStripName, true).FirstOrDefault();
+			}
+
+			if (!string.IsNullOrEmpty(plugin.ToolStripName))
+			{
+				appToolStrip = (ToolStrip)_Controls.Find(plugin.ToolStripName, true).FirstOrDefault();
+			}
 
 			MenuStrip ms = plugin.GetMenuStrip();
 			ToolStrip ts = plugin.GetToolStrip();

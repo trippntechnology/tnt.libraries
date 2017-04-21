@@ -93,7 +93,7 @@ namespace Plugins
 			MessageBox.Show("OneClicked");
 		}
 
-		public override void Execute(IWin32Window owner, IApplicationData content)
+		public override void Execute(IWin32Window owner, ToolStripItem sender, IApplicationData content)
 		{
 			MessageBox.Show("Plugin2");
 		}

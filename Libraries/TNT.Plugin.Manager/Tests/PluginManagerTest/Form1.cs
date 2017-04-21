@@ -34,7 +34,7 @@ namespace PluginManagerTest
 			Plugin p = tsi.Tag as Plugin;
 
 			ApplicationData data = new ApplicationData("This is the name field in the app data");
-			p.Execute(this, data, checkBox1.Checked);
+			p.Execute(this, arg1 as ToolStripItem, data, checkBox1.Checked);
 		}
 
 		private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)

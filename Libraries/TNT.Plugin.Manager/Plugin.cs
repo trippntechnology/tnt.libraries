@@ -118,8 +118,9 @@ namespace TNT.Plugin.Manager
 		/// Implement to associate an action with the <see cref="Plugin"/>
 		/// </summary>
 		/// <param name="owner">Calling application's window</param>
+		/// <param name="sender"><see cref="ToolStripItem"/> that initiated the call</param>
 		/// <param name="content">Content from the application that can be accessed</param>
-		public abstract void Execute(IWin32Window owner, IApplicationData content);
+		public abstract void Execute(IWin32Window owner, ToolStripItem sender, IApplicationData content);
 
 		/// <summary>
 		/// Set to capture event for when the tool tip changes
@@ -128,12 +129,13 @@ namespace TNT.Plugin.Manager
 
 		/// <summary>
 		/// Call to only execute if <paramref name="hasLicense"/> is true. If a license is not applicable, the caller only need
-		/// to call <see cref="Execute(IWin32Window, IApplicationData)"/>.
+		/// to call <see cref="Execute(IWin32Window, ToolStripItem, IApplicationData)"/>.
 		/// </summary>
 		/// <param name="owner">Calling application's window</param>
+		/// <param name="sender"><see cref="ToolStripItem"/> that initiated the call</param>
 		/// <param name="content">Content from the application that can be accessed</param>
 		/// <param name="hasLicense">Indicates if the calling application has a license</param>
-		public virtual void Execute(IWin32Window owner, IApplicationData content, bool hasLicense)
+		public virtual void Execute(IWin32Window owner, ToolStripItem sender, IApplicationData content, bool hasLicense)
 		{
 			if (this.LicenseRequired && !hasLicense)
 			{
@@ -141,7 +143,7 @@ namespace TNT.Plugin.Manager
 			}
 			else
 			{
-				this.Execute(owner, content);
+				this.Execute(owner, sender, content);
 			}
 		}
 
@@ -158,14 +160,31 @@ namespace TNT.Plugin.Manager
 		public abstract ToolStrip GetToolStrip();
 
 		/// <summary>
-		/// Returns and image referenced by the <see cref="EmbeddedResource"/>
+		/// Returns an image referenced by the <see cref="EmbeddedResource"/>
 		/// </summary>
 		/// <returns><see cref="Image"/> represented by the <see cref="EmbeddedResource"/></returns>
 		protected Image GetImage()
 		{
-			System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetAssembly(this.GetType());
-			Stream myStream = myAssembly.GetManifestResourceStream(this.EmbeddedResource);
-			return new Bitmap(myStream);
+			return GetImage(this.EmbeddedResource);
+		}
+
+		/// <summary>
+		/// Returns an image reference by <paramref name="resource"/> 
+		/// </summary>
+		/// <param name="resource">Embedded resource file containing the image</param>
+		/// <returns><see cref="Image"/> represented by <paramref name="resource"/></returns>
+		protected Image GetImage(string resource)
+		{
+			Bitmap bitmap = null;
+
+			if (!string.IsNullOrEmpty(resource))
+			{
+				System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetAssembly(this.GetType());
+				Stream myStream = myAssembly.GetManifestResourceStream(resource);
+				bitmap = new Bitmap(myStream);
+			}
+
+			return bitmap;
 		}
 	}
 }

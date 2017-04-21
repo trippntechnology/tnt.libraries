@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="Plugin1.cs" />
     <Compile Include="Plugin2.cs" />
-    <Compile Include="PluginBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\TNT.Plugin.Manager.csproj">
