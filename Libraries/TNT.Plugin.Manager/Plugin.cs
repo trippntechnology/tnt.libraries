@@ -40,13 +40,13 @@ namespace TNT.Plugin.Manager
 		/// </summary>
 		/// <typeparam name="T">Type of <see cref="ToolStripItem"/> to create</typeparam>
 		/// <returns></returns>
-		protected ToolStripItem CreateToolStripItem<T>() where T : ToolStripItem, new()
+		protected ToolStripItem CreateToolStripItem<T>(string text = "", string embeddedResource = "", string toolTipText = "") where T : ToolStripItem, new()
 		{
 			ToolStripItem item = new T();
 
-			item.Text = this.Text;
-			item.Image = GetImage();
-			item.ToolTipText = this.ToolTipText;
+			item.Text = string.IsNullOrEmpty(text) ? this.Text : text;
+			item.Image = GetImage(string.IsNullOrEmpty(embeddedResource) ? this.EmbeddedResource : embeddedResource);
+			item.ToolTipText = string.IsNullOrEmpty(toolTipText) ? this.ToolTipText : toolTipText;
 			item.Tag = this;
 
 			item.MouseEnter += Item_MouseEnter;
@@ -158,15 +158,6 @@ namespace TNT.Plugin.Manager
 		/// </summary>
 		/// <returns><see cref="ToolStrip"/></returns>
 		public abstract ToolStrip GetToolStrip();
-
-		/// <summary>
-		/// Returns an image referenced by the <see cref="EmbeddedResource"/>
-		/// </summary>
-		/// <returns><see cref="Image"/> represented by the <see cref="EmbeddedResource"/></returns>
-		protected Image GetImage()
-		{
-			return GetImage(this.EmbeddedResource);
-		}
 
 		/// <summary>
 		/// Returns an image reference by <paramref name="resource"/> 
