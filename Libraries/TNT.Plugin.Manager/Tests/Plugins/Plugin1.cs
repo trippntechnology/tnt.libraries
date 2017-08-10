@@ -23,7 +23,14 @@ namespace Plugins
 
 		public override string ToolTipText => "Tool tip for Plugin1";
 
-		public override string EmbeddedResource => "Plugins.Images.application_put.png";
+		public override Image Image
+		{
+			get
+			{
+				return this.GetImage("Plugins.Images.application_put.png");
+			}
+		}
+
 
 		public override MenuStrip GetMenuStrip()
 		{

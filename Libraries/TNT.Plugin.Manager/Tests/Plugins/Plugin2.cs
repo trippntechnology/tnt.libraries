@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using TNT.Plugin.Manager;
 
@@ -14,7 +15,13 @@ namespace Plugins
 
 		public override string ToolTipText => "Tool tip for plugin2";
 
-		public override string EmbeddedResource => "Plugins.Images.application_put.png";
+		public override Image Image
+		{
+			get
+			{
+				return base.GetImage("Plugins.Images.application_put.png");
+			}
+		}
 
 		public override MenuStrip GetMenuStrip()
 		{
