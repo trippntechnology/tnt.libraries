@@ -40,12 +40,12 @@ namespace TNT.Plugin.Manager
 		/// </summary>
 		/// <typeparam name="T">Type of <see cref="ToolStripItem"/> to create</typeparam>
 		/// <returns></returns>
-		protected ToolStripItem CreateToolStripItem<T>(string text = "", string embeddedResource = "", string toolTipText = "") where T : ToolStripItem, new()
+		protected ToolStripItem CreateToolStripItem<T>(string text = "", Image image = null, string toolTipText = "") where T : ToolStripItem, new()
 		{
 			ToolStripItem item = new T();
 
 			item.Text = string.IsNullOrEmpty(text) ? this.Text : text;
-			item.Image = GetImage(string.IsNullOrEmpty(embeddedResource) ? this.EmbeddedResource : embeddedResource);
+			item.Image = image == null ? this.Image : image;
 			item.ToolTipText = string.IsNullOrEmpty(toolTipText) ? this.ToolTipText : toolTipText;
 			item.Tag = this;
 
@@ -107,7 +107,13 @@ namespace TNT.Plugin.Manager
 		/// <summary>
 		/// Name of the embedded resource that should be used for the plugin's image
 		/// </summary>
-		public abstract string EmbeddedResource { get; }
+		//[Obsolete]
+		//public abstract string EmbeddedResource { get; }
+
+		/// <summary>
+		/// Image that should be displayed by the pluggin
+		/// </summary>
+		public abstract Image Image { get; }
 
 		/// <summary>
 		/// Override when this plugin requires a license to execute
@@ -177,5 +183,15 @@ namespace TNT.Plugin.Manager
 
 			return bitmap;
 		}
+
+		/// <summary>
+		/// Gets the image referenced by the <see cref="EmbeddedResource"/>
+		/// </summary>
+		/// <returns>Image referenced by the <see cref="EmbeddedResource"/></returns>
+		//[Obsolete]
+		//protected virtual Image GetImage()
+		//{
+		//	return string.IsNullOrWhiteSpace(this.EmbeddedResource) ? null : this.GetImage(this.EmbeddedResource);
+		//}
 	}
 }
