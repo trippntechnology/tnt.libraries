@@ -56,8 +56,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\trunk\TNT.Configuration.csproj">
-      <Project>{C8B4D9D5-25B9-47B9-B79B-EB4DCBC075C0}</Project>
+    <ProjectReference Include="..\TNT.Configuration.csproj">
+      <Project>{c8b4d9d5-25b9-47b9-b79b-eb4dcbc075c0}</Project>
       <Name>TNT.Configuration</Name>
     </ProjectReference>
   </ItemGroup>
