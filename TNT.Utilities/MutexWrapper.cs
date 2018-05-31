@@ -57,7 +57,7 @@ namespace TNT.Utilities
 		/// Critical section to execute with mutex protection
 		/// </summary>
 		/// <param name="action">Delegate that will be executed within the mutex's protection</param>
-		public void DoProtectedCode(Action action)
+		public void CriticalSection(Action action)
 		{
 			CriticalSection(-1, action);
 		}
