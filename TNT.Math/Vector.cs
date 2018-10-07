@@ -339,7 +339,10 @@ namespace TNT.Math
 		/// <returns>Hash code</returns>
 		public override int GetHashCode()
 		{
-			return base.GetHashCode();
+			int hash = 13;
+			hash = hash + m_X.GetHashCode();
+			hash = hash + m_Y.GetHashCode();
+			return hash;
 		}
 
 		/// <summary>

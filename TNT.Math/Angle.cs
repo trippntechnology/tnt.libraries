@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace TNT.Math
+﻿namespace TNT.Math
 {
 	/// <summary>
 	/// Represents an angle
@@ -46,7 +41,7 @@ namespace TNT.Math
 		/// </summary>
 		/// <param name="angle">The angle</param>
 		/// <param name="isDegrees">Indicates whether the angle is in degrees or radians (default: false)</param>
-		public Angle(double angle, bool isDegrees)
+		public Angle(double angle, bool isDegrees = true)
 		{
 			if (isDegrees)
 			{
@@ -113,7 +108,9 @@ namespace TNT.Math
 		/// <returns>Hash code</returns>
 		public override int GetHashCode()
 		{
-			return base.GetHashCode();
+			int hash = 13;
+			hash = (hash * 7) + m_Radians.GetHashCode();
+			return hash;
 		}
 
 		#endregion

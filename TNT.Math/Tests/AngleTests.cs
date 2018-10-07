@@ -63,5 +63,20 @@ namespace TNT.Math.Tests
 
 			Assert.AreEqual(75, System.Math.Round(sum.InDegrees, 3));
 		}
+
+		[TestMethod]
+		public void NotEqual_Not_Angle()
+		{
+			Angle a1 = new Angle(33, true);
+			Assert.IsFalse(a1.Equals(1));
+		}
+
+		[TestMethod]
+		public void GetHash()
+		{
+			var a1 = new Angle(33, true);
+			var hash = a1.GetHashCode();
+			Assert.AreEqual(-393782082, hash);
+		}
 	}
 }

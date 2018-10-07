@@ -247,5 +247,19 @@ namespace TNT.Math.Tests
 			Assert.AreEqual(expected.Y, (p - v).Y);
 		}
 
+		[TestMethod]
+		public void NotEqual_Not_Vector()
+		{
+			var v = new Vector(17, 11);
+			Assert.IsFalse(v.Equals(1));
+		}
+
+		[TestMethod]
+		public void GetHash()
+		{
+			var v = new Vector(17,11);
+			var hash = v.GetHashCode();
+			Assert.AreEqual(-2141782003, hash);
+		}
 	}
 }
