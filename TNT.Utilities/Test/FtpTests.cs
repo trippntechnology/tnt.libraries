@@ -8,7 +8,7 @@ namespace Test
 	[TestClass]
 	public class FtpTests
 	{
-		[TestMethod]
+		//[TestMethod]
 		public void Ftp_UploadDownloadTest()
 			{
 			string fileName = "Ftp_UploadDownloadTest.txt";

@@ -33,7 +33,8 @@ namespace Test
 		[TestMethod]
 		public void GetVolumeSerialNumberTest()
 		{
-			Assert.AreEqual("0AD6DF7A", Registration.GetVolumeSerialNumber());
+			var serialNumber = Registration.GetVolumeSerialNumber();
+			Assert.AreEqual("62A1A1A5", Registration.GetVolumeSerialNumber());
 		}
 
 		[TestMethod]
