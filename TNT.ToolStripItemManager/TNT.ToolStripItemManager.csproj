@@ -35,8 +35,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyInfo_Title>ToolStripItem Manager</AssemblyInfo_Title>
-    <AssemblyInfo_MinorVersion>2</AssemblyInfo_MinorVersion>
-    <AssemblyInfo_PatchVersion>2</AssemblyInfo_PatchVersion>
+    <AssemblyInfo_MinorVersion>3</AssemblyInfo_MinorVersion>
+    <AssemblyInfo_PatchVersion>0</AssemblyInfo_PatchVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToolStripItemCheckboxGroupManager.cs" />
     <Compile Include="ToolStripItemGroup.cs" />
     <Compile Include="ToolStripItemGroupManager.cs" />
   </ItemGroup>
