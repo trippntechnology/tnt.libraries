@@ -39,6 +39,29 @@ namespace Test
 		}
 
 		[TestMethod]
+		public void Parameters_ParseArgs_PostValidator()
+		{
+			Parameters parms = new Parameters();
+			var postValidatorCalled = false;
+
+			parms.Add(new FlagParameter("f1", "f1 description"));
+			parms.Add(new StringParameter("s1", "s1 description"));
+
+			Assert.IsTrue(parms.ParseArgs(new string[] { "/s1", "param1", "/f1" },(obj)=>
+			{
+				Assert.AreEqual(2, obj.Count);
+				postValidatorCalled = true;
+			}));
+
+			Assert.IsTrue(postValidatorCalled);
+		}
+
+		private void validator(Parameters obj)
+		{
+			throw new NotImplementedException();
+		}
+
+		[TestMethod]
 		public void Parameters_FlagParameter_Exists_Tests()
 		{
 			Parameters parms = new Parameters();

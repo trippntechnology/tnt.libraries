@@ -26,7 +26,7 @@ namespace TNT.Utilities.Console
 		}
 
 		/// <summary>
-		/// Intitializes a <see cref="CERTParameter"/>
+		/// Initializes a <see cref="CERTParameter"/>
 		/// </summary>
 		/// <param name="name">Parameter name</param>
 		/// <param name="description">Parameter description</param>

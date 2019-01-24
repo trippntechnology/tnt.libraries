@@ -9,8 +9,19 @@ namespace TNT.Utilities
 	/// </summary>
 	public class Token
 	{
+		/// <summary>
+		/// Random number generator
+		/// </summary>
 		protected static Random _Random = new Random(DateTime.Now.Millisecond);
+
+		/// <summary>
+		/// Characters that can be used in the token
+		/// </summary>
 		protected static string _Characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+		/// <summary>
+		/// Delimiter used by the token
+		/// </summary>
 		protected static string _Delimiter = "-";
 
 		/// <summary>

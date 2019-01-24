@@ -37,7 +37,7 @@ namespace TNT.Utilities
 						throw new Exception("Unable to obtain mutex");
 					}
 				}
-				catch (AbandonedMutexException ame)
+				catch (AbandonedMutexException)
 				{
 				}
 

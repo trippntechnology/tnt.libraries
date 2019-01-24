@@ -1,0 +1,8 @@
+**/Help
+**/.vs
+**/bin
+**/obj
+**/packages
+**/TestResults
+**/*.nupkg
+**/*.user
