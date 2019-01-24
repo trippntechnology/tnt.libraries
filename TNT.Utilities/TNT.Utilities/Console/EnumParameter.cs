@@ -10,7 +10,7 @@ namespace TNT.Utilities.Console
 	public class EnumParameter<T> : Parameter
 	{
 		/// <summary>
-		/// Returns <see cref="Value"/> as enumeration of type <typeparam name="T"></typeparam>
+		/// Returns <see cref="Value"/> as enumeration of type <typeparamref name="T"/>
 		/// </summary>
 		public new T Value { get { return (T)base.Value; } }
 

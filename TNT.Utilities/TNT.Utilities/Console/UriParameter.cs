@@ -2,6 +2,9 @@
 
 namespace TNT.Utilities.Console
 {
+	/// <summary>
+	/// A <see cref="Parameter"/> that represents a <see cref="Uri"/>
+	/// </summary>
 	public class UriParameter : Parameter
 	{
 		/// <summary>
