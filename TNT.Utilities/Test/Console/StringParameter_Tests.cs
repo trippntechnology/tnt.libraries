@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using TNT.Utilities.Console;
 
 namespace Test.Console
@@ -30,6 +31,23 @@ namespace Test.Console
 			Assert.IsFalse(m_Params.ParseArgs(new string[] { "/s2", "" }));
 			Assert.IsTrue(m_Params.ParseArgs(new string[] { "/s2", "value" }));
 			Assert.AreEqual("value", (m_Params["s2"] as StringParameter).Value);
+		}
+
+		[TestMethod]
+		[ExpectedException(typeof(ArgumentException))]
+		public void StringParameter_SetValue_Exception()
+		{
+			var sut =new  StringParameter("s", "Description");
+			try
+			{
+				sut.SetValue("");
+			}
+			catch (Exception ex)
+			{
+				Assert.AreEqual(sut.Value, string.Empty);
+				Assert.AreEqual("Parameter 's' expects a value", ex.Message);
+				throw;
+			}
 		}
 	}
 }

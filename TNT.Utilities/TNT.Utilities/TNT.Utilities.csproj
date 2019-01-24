@@ -73,6 +73,7 @@
     <Compile Include="Console\StringListParameter.cs" />
     <Compile Include="Console\StringParameter.cs" />
     <Compile Include="Console\UriParameter.cs" />
+    <Compile Include="Console\VersionParameter.cs" />
     <Compile Include="CustomAttributes\PropertyReflectorAttribute.cs" />
     <Compile Include="Ftp.cs" />
     <Compile Include="MutexWrapper.cs" />

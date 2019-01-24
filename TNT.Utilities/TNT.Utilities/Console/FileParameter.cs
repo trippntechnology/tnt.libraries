@@ -14,7 +14,7 @@ namespace TNT.Utilities.Console
 		public bool MustExist { get; set; }
 
 		/// <summary>
-		/// Intializes a <see cref="FileParameter"/>
+		/// Initializes a <see cref="FileParameter"/>
 		/// </summary>
 		/// <param name="name">Parameter's name</param>
 		/// <param name="description">Parameter's description</param>

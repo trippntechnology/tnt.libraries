@@ -51,7 +51,7 @@ namespace TNT.Utilities.Console
 		/// <param name="value">Should be null or empty</param>
 		public override void SetValue(object value)
 		{
-			if (value != null && !string.IsNullOrEmpty(value.ToString()))
+			if (!string.IsNullOrEmpty(value.ToString()))
 			{
 				throw new ArgumentException(string.Format("The '{0}' flag does not require a value", this.Name));
 			}

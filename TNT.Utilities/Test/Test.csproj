@@ -70,6 +70,7 @@
     <Compile Include="Console\StringListParameter_Tests.cs" />
     <Compile Include="Console\StringParameter_Tests.cs" />
     <Compile Include="Console\UriParameterTests.cs" />
+    <Compile Include="Console\VersionParameterTests.cs" />
     <Compile Include="FtpTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectorTests.cs" />
