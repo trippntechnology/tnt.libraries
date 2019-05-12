@@ -88,14 +88,14 @@ namespace Test
 
 			var types = Utilities.GetTypes(assemblyFile, null);
 
-			Assert.AreEqual(57, types.Length);
+			Assert.AreEqual(58, types.Length);
 
 			types = Utilities.GetTypes(assemblyFile, t =>
 			{
 				return t.IsVisible;
 			});
 
-			Assert.AreEqual(36, types.Length);
+			Assert.AreEqual(37, types.Length);
 		}
 	}
 }

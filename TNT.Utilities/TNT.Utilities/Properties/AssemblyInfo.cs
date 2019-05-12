@@ -10,11 +10,11 @@
 
 [assembly: System.Reflection.AssemblyCompany("Tripp\'n Technology, LLC.")]
 [assembly: System.Reflection.AssemblyConfiguration("Debug")]
-[assembly: System.Reflection.AssemblyCopyright("Copyright Tripp\'n Technology, LLC. 2018")]
-[assembly: System.Reflection.AssemblyFileVersion("1.6.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersion("1.6.0.0-1812142237")]
+[assembly: System.Reflection.AssemblyCopyright("Copyright Tripp\'n Technology, LLC. 2019")]
+[assembly: System.Reflection.AssemblyFileVersion("1.7.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("1.7.0.0-1901231835")]
 [assembly: System.Reflection.AssemblyTitle("TNT Utilities")]
-[assembly: System.Reflection.AssemblyVersion("1.6.0.0")]
+[assembly: System.Reflection.AssemblyVersion("1.7.0.0")]
 [assembly: System.Reflection.AssemblyDescription("TNT Utilities")]
 [assembly: System.Reflection.AssemblyProduct("TNT Utilities")]
 

@@ -1,4 +1,11 @@
-Debug
+**/Help
+**/.vs
+**/bin
+**/obj
+**/packages
+**/TestResults
+**/*.nupkg
+**/*.userDebug
 .vs
 packages/
 *.nupkg

@@ -200,7 +200,7 @@ namespace TNT.Utilities
 		/// Returns a list of types matching <paramref name="filter"/> within assembly referenced by <paramref name="assemblyName"/>
 		/// </summary>
 		/// <param name="assemblyName">Name of assembly</param>
-		/// <param name="filter"><see cref="Func"/> used to filter the types returned</param>
+		/// <param name="filter"><see cref="Func{T, TResult}"/> used to filter the types returned</param>
 		/// <returns>Array of types filtered by <paramref name="filter"/></returns>
 		public static Type[] GetTypes(string assemblyName, Func<Type, bool> filter)
 		{

@@ -116,7 +116,7 @@ namespace TNT.Utilities.Console
 		public abstract string Syntax();
 
 		/// <summary>
-		/// Creates an array of <see cref="string"/> give a <paramref name="line"/> that exceeds the <see cref="USAGE_LINE_LENGTH"/>
+		/// Creates an array of <see cref="string"/> given a <paramref name="line"/> that exceeds the <see cref="USAGE_LINE_LENGTH"/>
 		/// </summary>
 		/// <param name="line">Line to wrap</param>
 		/// <returns>Array of <see cref="string"/></returns>
