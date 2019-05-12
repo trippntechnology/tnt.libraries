@@ -6,10 +6,5 @@
 **/TestResults
 **/*.nupkg
 **/*.userDebug
-.vs
-packages/
-*.nupkg
 *.user
-obj/
-TestResults/
-MigrationBackup/
+**/MigrationBackup
