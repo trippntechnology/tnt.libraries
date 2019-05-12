@@ -1,0 +1,8 @@
+Debug
+.vs
+packages/
+*.nupkg
+*.user
+obj/
+TestResults/
+MigrationBackup/

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNT.Plugin.Manager", "TNT.Plugin.Manager.csproj", "{B83A952D-FE56-42DD-B376-3DCE6D2CBB98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNT.Plugin.Manager", "TNT.Plugin.Manager.csproj", "{E1013849-1497-487F-A7E0-7BE71C8797DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins", "Tests\Plugins\Plugins.csproj", "{07C40E3E-2710-49C2-8FED-B66A3FA5F990}"
 EndProject
@@ -17,10 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B83A952D-FE56-42DD-B376-3DCE6D2CBB98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B83A952D-FE56-42DD-B376-3DCE6D2CBB98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B83A952D-FE56-42DD-B376-3DCE6D2CBB98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B83A952D-FE56-42DD-B376-3DCE6D2CBB98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1013849-1497-487F-A7E0-7BE71C8797DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1013849-1497-487F-A7E0-7BE71C8797DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1013849-1497-487F-A7E0-7BE71C8797DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1013849-1497-487F-A7E0-7BE71C8797DB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07C40E3E-2710-49C2-8FED-B66A3FA5F990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07C40E3E-2710-49C2-8FED-B66A3FA5F990}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07C40E3E-2710-49C2-8FED-B66A3FA5F990}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE4ED71E-8003-4F01-9DDB-C006AF34268E}
 	EndGlobalSection
 EndGlobal
