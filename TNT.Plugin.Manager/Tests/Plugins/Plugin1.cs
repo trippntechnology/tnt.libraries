@@ -14,9 +14,9 @@ namespace Plugins
 
 		public override bool LicenseRequired => true;
 
-		public override string Text => "Plugin1";
+		public override string Text => "License Required";
 
-		public override string ToolTipText => "Tool tip for Plugin1";
+		public override string ToolTipText => "This feature requires a license";
 
 		public override Image Image
 		{
