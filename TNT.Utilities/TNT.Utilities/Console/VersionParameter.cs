@@ -5,6 +5,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// A <see cref="Parameter"/> that represents a <see cref="Version"/>
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class VersionParameter : Parameter
 	{
 		/// <summary>

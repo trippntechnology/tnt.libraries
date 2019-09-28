@@ -13,6 +13,7 @@ namespace TNT.Utilities.CommandManagement
 	/// <summary>
 	/// Manages commands
 	/// </summary>
+	[Obsolete("Use TNT.ToolStripItemManager")]
 	public class CommandManager : Dictionary<string, Command>
 	{
 		#region Event handlers

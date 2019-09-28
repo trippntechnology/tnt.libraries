@@ -6,6 +6,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Represents and email address parameter
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class EMailParameter : Parameter
 	{
 		/// <summary>

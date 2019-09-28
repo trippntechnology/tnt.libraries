@@ -5,6 +5,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Represents a parameter with an integer value
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class IntParameter : Parameter
 	{
 		/// <summary>

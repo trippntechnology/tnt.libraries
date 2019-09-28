@@ -5,6 +5,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Represents a date/time value
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class DateTimeParameter : Parameter
 	{
 		/// <summary>

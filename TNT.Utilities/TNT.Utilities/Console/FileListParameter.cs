@@ -7,6 +7,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Parameter that represents a comma separated listing files
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class FileListParameter:StringListParameter
 	{
 		/// <summary>

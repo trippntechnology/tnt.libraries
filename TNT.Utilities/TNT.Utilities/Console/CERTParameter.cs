@@ -1,10 +1,12 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TNT.Utilities.Console
 {
 	/// <summary>
 	/// Represents a certificate
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class CERTParameter : FileParameter
 	{
 		/// <summary>

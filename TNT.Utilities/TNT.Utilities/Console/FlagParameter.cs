@@ -5,6 +5,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Represents a flag parameter that doesn't have a value
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class FlagParameter : Parameter
 	{
 		/// <summary>

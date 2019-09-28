@@ -6,6 +6,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Represents a <see cref="string"/> list parameter value
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class StringListParameter : Parameter
 	{
 		/// <summary>

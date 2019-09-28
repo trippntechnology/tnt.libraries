@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -31,6 +32,7 @@ namespace TNT.Utilities.CommandManagement
 	/// <summary>
 	/// A command represents multiple ToolStripItems 
 	/// </summary>
+	[Obsolete("Use TNT.ToolStripItemManager")]
 	public class Command
 	{
 		#region Members

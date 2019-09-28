@@ -7,6 +7,7 @@ namespace TNT.Utilities.Console
 	/// Represents a parameter that is constrained to specific values
 	/// </summary>
 	/// <typeparam name="T">Enumeration</typeparam>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class EnumParameter<T> : Parameter
 	{
 		/// <summary>

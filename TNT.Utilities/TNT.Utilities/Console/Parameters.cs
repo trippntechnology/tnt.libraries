@@ -11,6 +11,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Reprents a listing of parameters that can be used by an application
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class Parameters : List<Parameter>
 	{
 		/// <summary>

@@ -6,6 +6,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Parameter that represents a path
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class PathParameter : StringParameter
 	{
 		/// <summary>

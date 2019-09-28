@@ -7,6 +7,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Base for all parameters used by the Parameters class
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public abstract class Parameter
 	{
 		private const int USAGE_LINE_LENGTH = 70;

@@ -5,6 +5,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Represents a string parameter value
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class StringParameter : Parameter
 	{
 		/// <summary>

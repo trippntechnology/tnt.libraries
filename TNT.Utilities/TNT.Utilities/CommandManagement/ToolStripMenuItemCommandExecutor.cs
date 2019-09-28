@@ -6,6 +6,7 @@ namespace TNT.Utilities.CommandManagement
 	/// <summary>
 	/// Class that represents a ToolStripMenuItem
 	/// </summary>
+	[Obsolete("Use TNT.ToolStripItemManager")]
 	public class ToolStripMenuItemCommandExecutor : CommandExecutor
 	{
 		#region Properties

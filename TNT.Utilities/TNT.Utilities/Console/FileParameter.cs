@@ -6,6 +6,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Parameter that represents a file name
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class FileParameter : StringParameter
 	{
 		/// <summary>

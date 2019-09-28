@@ -7,6 +7,7 @@ namespace TNT.Utilities.CommandManagement
 	/// <summary>
 	/// Wraps a ToolStripItem to handle manipulation of the common properties and events
 	/// </summary>
+	[Obsolete("Use TNT.ToolStripItemManager")]
 	public abstract class CommandExecutor
 	{
 		#region Members

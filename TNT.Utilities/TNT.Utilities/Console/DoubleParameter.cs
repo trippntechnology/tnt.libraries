@@ -5,6 +5,7 @@ namespace TNT.Utilities.Console
 	/// <summary>
 	/// Represents a parameter with double value
 	/// </summary>
+	[Obsolete("Use TNT.ArgumentParser")]
 	public class DoubleParameter : Parameter
 	{
 		/// <summary>

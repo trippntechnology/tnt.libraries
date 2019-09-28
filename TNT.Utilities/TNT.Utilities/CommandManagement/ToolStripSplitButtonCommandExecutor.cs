@@ -6,6 +6,7 @@ namespace TNT.Utilities.CommandManagement
 	/// <summary>
 	/// Represents a ToolStripsplitButton
 	/// </summary>
+	[Obsolete("Use TNT.ToolStripItemManager")]
 	public class ToolStripSplitButtonCommandExecutor : CommandExecutor
 	{
 		#region Properties
