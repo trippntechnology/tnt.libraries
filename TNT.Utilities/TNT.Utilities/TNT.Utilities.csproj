@@ -14,6 +14,14 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,7 +43,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyInfo_Title>TNT Utilities</AssemblyInfo_Title>
-    <AssemblyInfo_MinorVersion>7</AssemblyInfo_MinorVersion>
+    <AssemblyInfo_MinorVersion>8</AssemblyInfo_MinorVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -76,6 +84,7 @@
     <Compile Include="Console\UriParameter.cs" />
     <Compile Include="Console\VersionParameter.cs" />
     <Compile Include="CustomAttributes\PropertyReflectorAttribute.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Ftp.cs" />
     <Compile Include="MutexWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

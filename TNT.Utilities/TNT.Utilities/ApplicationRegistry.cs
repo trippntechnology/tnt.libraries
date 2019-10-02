@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
 namespace TNT.Utilities
 {
@@ -19,8 +19,8 @@ namespace TNT.Utilities
 		/// Constructor
 		/// </summary>
 		/// <param name="baseRegistryKey">Base registry key</param>
-		/// <param name="companyName">Company name to use in the subkey</param>
-		/// <param name="appName">Application name to use in the subkey</param>
+		/// <param name="companyName">Company name to use in the sub-key</param>
+		/// <param name="appName">Application name to use in the sub-key</param>
 		public ApplicationRegistry(RegistryKey baseRegistryKey, string companyName, string appName)
 		{
 			BaseRegistryKey = baseRegistryKey.CreateSubKey("SOFTWARE");
@@ -32,13 +32,33 @@ namespace TNT.Utilities
 			BaseRegistryKey = BaseRegistryKey.CreateSubKey(appName);
 		}
 
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="form"><see cref="Form"/> who's state should be stored</param>
+		/// <param name="baseRegistryKey">Base registry key</param>
+		/// <param name="companyName">Company name to use in the sub-key</param>
+		/// <param name="appName">Application name to use in the sub-key</param>
+		public ApplicationRegistry(Form form, RegistryKey baseRegistryKey, string companyName, string appName)
+			: this(baseRegistryKey, companyName, appName)
+		{
+			form.FormClosing += FormClosing;
+			form.Load += FormLoad;
+		}
+		private void FormLoad(object sender, EventArgs e) => (sender as Form)?.Also(it => LoadFormState(it));
+
+		private void FormClosing(object sender, FormClosingEventArgs e) => (sender as Form)?.Also(it => SaveFormState(it));
+
 		#region Save/Load Form State
 
 		/// <summary>
 		/// Saves several of the Form properties within the FormState key
 		/// </summary>
 		/// <param name="form">Form whose properties should be saved</param>
-		public void SaveFormState(Form form)
+		[Obsolete("Pass Form in constructor instead")]
+		public void SaveFormState(Form form) => SaveState(form);
+
+		private void SaveState(Form form)
 		{
 			if (form != null)
 			{
@@ -60,7 +80,10 @@ namespace TNT.Utilities
 		/// Loads the Form properties saved with SaveFormState
 		/// </summary>
 		/// <param name="form">Form whose properties are set by those set in the registry</param>
-		public void LoadFormState(Form form)
+		[Obsolete("Pass Form in constructor instead")]
+		public void LoadFormState(Form form) => LoadState(form);
+
+		private void LoadState(Form form)
 		{
 			if (form != null)
 			{
