@@ -114,7 +114,7 @@ namespace Tests
 			}
 			catch (Exception ex)
 			{
-				Assert.AreEqual("Failed to load assembly", ex.Message);
+				Assert.AreEqual("Failed to load assembly (D:\\Steve\\gitrepos\\tnt.libraries\\TNT.Configuration\\Tests\\bin\\Debug\\Tests.dll.config line 161)", ex.Message);
 				Assert.IsTrue(ex is ConfigurationErrorsException);
 				Assert.IsTrue(ex.InnerException is FileNotFoundException);
 			}
